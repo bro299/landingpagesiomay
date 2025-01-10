@@ -29,7 +29,7 @@ const Hero = () => {
           <span className="block text-primary-400">dengan Cita Rasa Modern</span>
         </h2>
         <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
-          Nikmati kelezatan siomay dengan racikan bumbupremium yang spesial dan bahan berkualitas
+          Nikmati kelezatan siomay dengan racikan bumbu premium yang spesial dan bahan berkualitas
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
