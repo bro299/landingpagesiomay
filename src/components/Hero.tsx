@@ -21,7 +21,7 @@ const Hero = () => {
 
   return (
     <div ref={heroRef} className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-secondary-900 to-secondary-800">
-      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&w=1920')] bg-cover bg-center opacity-20" />
+      <div className="absolute inset-0 bg-[url('https://asset.kompas.com/crops/5ITcLtggdvRZwC1yJmXDHhAuDnU=/0x0:1000x667/1200x800/data/photo/2021/05/23/60aa371ed27a5.jpg?auto=format&fit=crop&w=1920')] bg-cover bg-center opacity-20" />
       
       <div className="hero-content text-center px-4 relative z-10 max-w-4xl mx-auto">
         <h2 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
