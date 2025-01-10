@@ -24,10 +24,10 @@ const Hero = () => {
       <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1496116218417-1a781b1c416c?auto=format&fit=crop&w=1920')] bg-cover bg-center opacity-20" />
       
       <div className="hero-content text-center px-4 relative z-10 max-w-4xl mx-auto">
-        <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+        <h2 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
           Siomay Tradisional
           <span className="block text-primary-400">dengan Cita Rasa Modern</span>
-        </h1>
+        </h2>
         <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
           Nikmati kelezatan siomay premium dengan racikan bumbu spesial dan bahan berkualitas
         </p>
