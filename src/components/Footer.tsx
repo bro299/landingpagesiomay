@@ -10,13 +10,13 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4">Hubungi Kami</h3>
             <div className="space-y-4">
               <a
-                href="https://wa.link/mqzmbm"
+                href="https://walg.link/6884c6412f5fa"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center hover:text-amber-200 transition-colors"
               >
                 <Phone className="w-5 h-5 mr-2" />
-                +62 831-7744-3185
+                +62 888-6435-570
               </a>
               <a
                 href="https://instagram.com/siomayenak"
