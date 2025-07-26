@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Building2, MapPin } from 'lucide-react';
+import { Building2, MapPin, Phone } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,25 +10,29 @@ const branches = [
     name: 'Siomay & Batagor Bandung Barokah',
     address: ' Jl. Ambal-Ketawang, Keongan, Ukirsari, Kec. Grabag, Kabupaten Purworejo, Jawa Tengah ',
     phone: '08886435570',
-    hours: '10:00 - 21:00'
+    hours: '10:00 - 21:00',
+    gmapsLink: 'https://maps.app.goo.gl/uZ2gHrDGibHwKRyr7'
   },
   {
     name: 'Siomay & Batagor Bandung Barokah 2',
     address: 'Depan SMP N 38 PWR, Desa Bakurejo, Kec. Grabag, Kabupaten Purworejo, Jawa Tengah',
     phone: '08886435570',
-    hours: '08:00 - 19:00'
+    hours: '08:00 - 19:00',
+    gmapsLink: 'https://maps.app.goo.gl/BzQVqV5S7CY1pWYR8'
   },
   {
     name: 'Siomay & Batagor Bandung Barokah 3',
     address: 'Teges Lor, Patutrejo, Kec. Grabag, Kabupaten Purworejo, Jawa Tengah',
     phone: '08886435570',
-    hours: '13:00 - 21:00'
+    hours: '13:00 - 21:00',
+    gmapsLink: 'https://maps.app.goo.gl/jz4r9PrJ1E9wbhu57'
   },
   {
     name: 'Siomay & Batagor Bandung Barokah 4',
     address: 'Unnamed Road, Klodran, Sumberagung, Kec. Grabag, Kabupaten Purworejo, Jawa Tengah',
     phone: '08886435570',
-    hours: '13:00 - 21:00'
+    hours: '13:00 - 21:00',
+    gmapsLink: 'https://maps.app.goo.gl/rgzNLh9ZxNxeboWq6'
   }
 ];
 
@@ -69,16 +73,34 @@ const Branches = () => {
           {branches.map((branch, index) => (
             <div key={index} className="branch-card bg-amber-50 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
               <h3 className="font-bold text-amber-800 text-xl mb-4">{branch.name}</h3>
+              
               <div className="space-y-3 text-amber-700">
                 <div className="flex items-start">
                   <MapPin className="w-5 h-5 mr-2 mt-1 flex-shrink-0 text-amber-600" />
                   <p>{branch.address}</p>
                 </div>
+                
+                <div className="flex items-center">
+                  <Phone className="w-5 h-5 mr-2 flex-shrink-0 text-amber-600" />
+                  <p>{branch.hours}</p>
+                </div>
+              </div>
+
+              <div className="mt-4 space-y-2">
+                <a
+                  href={branch.gmapsLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-center"
+                >
+                  Lihat di Google Maps
+                </a>
+                
                 <a
                   href={`https://wa.me/${branch.phone}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block w-full bg-amber-600 text-white py-2 px-4 rounded-lg hover:bg-amber-700 transition-colors text-center mt-4"
+                  className="inline-block w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors text-center"
                 >
                   Hubungi via WhatsApp
                 </a>
