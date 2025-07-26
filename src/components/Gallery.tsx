@@ -1,84 +1,78 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
-const galleryItems = [
-  // Kegiatan
+// Data gallery yang diperlengkapi
+const galleryData = [
   {
     category: 'Kegiatan',
     title: 'Persiapan Siomay Pagi',
-    image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=500&q=80',
-    description: 'Tim kami mempersiapkan siomay segar setiap pagi'
-  },
-  {
-    category: 'Kegiatan', 
-    title: 'Proses Memasak',
-    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?auto=format&fit=crop&w=500&q=80',
-    description: 'Proses memasak dengan resep tradisional'
+    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=400&fit=crop',
+    description: 'Proses pembuatan siomay segar setiap pagi dengan bahan-bahan pilihan terbaik'
   },
   {
     category: 'Kegiatan',
-    title: 'Pelayanan Pelanggan',
-    image: 'https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=500&q=80',
-    description: 'Melayani pelanggan dengan ramah dan profesional'
-  },
-  
-  // Acara
-  {
-    category: 'Acara',
-    title: 'Grand Opening',
-    image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=500&q=80',
-    description: 'Pembukaan cabang baru warung siomay kami'
+    title: 'Memasak Kuah Kacang',
+    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=400&fit=crop',
+    description: 'Pembuatan kuah kacang spesial dengan resep turun temurun keluarga'
   },
   {
     category: 'Acara',
-    title: 'Festival Kuliner',
-    image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=500&q=80',
-    description: 'Partisipasi dalam festival kuliner lokal'
+    title: 'Festival Kuliner 2024',
+    image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=400&fit=crop',
+    description: 'Partisipasi dalam festival kuliner daerah dengan antusiasme tinggi'
   },
   {
     category: 'Acara',
-    title: 'Pelatihan Tim',
-    image: 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=500&q=80',
-    description: 'Pelatihan kualitas pelayanan untuk tim'
-  },
-  
-  // Sertifikat
-  {
-    category: 'Sertifikat',
-    title: 'Sertifikat Halal',
-    image: 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=500&q=80',
-    description: 'Sertifikat halal dari MUI'
+    title: 'Bazar Ramadan',
+    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=400&fit=crop',
+    description: 'Stand siomay di bazar Ramadan dengan menu spesial berbuka puasa'
   },
   {
     category: 'Sertifikat',
-    title: 'Sertifikat Hygiene',
-    image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=500&q=80',
-    description: 'Sertifikat kebersihan dan sanitasi'
+    title: 'Sertifikat PIRT',
+    image: 'https://images.unsplash.com/photo-1589578527966-fdac0f44566c?w=400&h=400&fit=crop',
+    description: 'Sertifikat Pangan Industri Rumah Tangga untuk menjamin kualitas produk'
   },
   {
     category: 'Sertifikat',
-    title: 'Penghargaan Usaha',
-    image: 'https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?auto=format&fit=crop&w=500&q=80',
-    description: 'Penghargaan usaha kecil menengah terbaik'
-  },
-  
-  // Produk
-  {
-    category: 'Produk',
-    title: 'Siomay Original',
-    image: 'https://img.herstory.co.id/articles/archive_20220412/siomay-bandung-20220412-114503.jpg?auto=format&fit=crop&w=500',
-    description: 'Siomay dengan resep tradisional - Rp 1.000/pc'
+    title: 'Pelatihan Food Safety',
+    image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=400&fit=crop',
+    description: 'Sertifikat keamanan pangan untuk meningkatkan standar higienitas'
   },
   {
     category: 'Produk',
-    title: 'Tahu Krispi',
-    image: 'https://4.bp.blogspot.com/-8TS1VSgZTN4/W-g_XqyFkKI/AAAAAAAAAv4/p3aHBUhimK08_-YdfnZlulGypLRGJ1F9QCLcBGAs/s1600/tahu-crispy-1024x683.jpg?auto=format&fit=crop&w=500',
-    description: 'Tahu goreng renyah dan lezat - Rp 1.000/pc'
+    title: 'Siomay Ayam Spesial',
+    image: 'https://images.unsplash.com/photo-1563379091339-03246963d51a?w=400&h=400&fit=crop',
+    description: 'Siomay ayam dengan tekstur lembut dan rasa yang menggugah selera - Rp 15.000/porsi'
+  },
+  {
+    category: 'Produk',
+    title: 'Batagor Crispy',
+    image: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400&h=400&fit=crop',
+    description: 'Batagor goreng renyah dengan bumbu kacang yang khas - Rp 12.000/porsi'
   },
   {
     category: 'Produk',
     title: 'Es Kopyor Segar',
     image: 'https://i0.wp.com/www.topwisata.info/wp-content/uploads/2022/04/Es-Kopyor-1-1.jpg?resize=930%2C620&ssl=1',
     description: 'Minuman segar es kopyor - Rp 3.000/gelas'
+  },
+  {
+    category: 'Produk',
+    title: 'Tahu Isi Goreng',
+    image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400&h=400&fit=crop',
+    description: 'Tahu isi dengan bumbu kacang yang gurih - Rp 8.000/porsi'
+  },
+  {
+    category: 'Kegiatan',
+    title: 'Pelayanan Pelanggan',
+    image: 'https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=400&h=400&fit=crop',
+    description: 'Melayani pelanggan dengan ramah dan profesional setiap hari'
+  },
+  {
+    category: 'Acara',
+    title: 'Car Free Day',
+    image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=400&fit=crop',
+    description: 'Ikut serta dalam acara Car Free Day dengan gerobak siomay keliling'
   }
 ];
 
@@ -103,24 +97,30 @@ const Gallery = () => {
       });
     }, observerOptions);
 
-    const galleryElements = document.querySelectorAll('.gallery-item');
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    
-    galleryElements.forEach((item, index) => {
-      item.style.transitionDelay = `${index * 0.1}s`;
-      observer.observe(item);
-    });
+    // Delay untuk memastikan DOM sudah siap
+    const timer = setTimeout(() => {
+      const galleryElements = document.querySelectorAll('.gallery-item');
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      
+      galleryElements.forEach((item, index) => {
+        item.style.transitionDelay = `${index * 0.1}s`;
+        observer.observe(item);
+      });
 
-    filterBtns.forEach((btn, index) => {
-      btn.style.transitionDelay = `${index * 0.05}s`;
-      observer.observe(btn);
-    });
+      filterBtns.forEach((btn, index) => {
+        btn.style.transitionDelay = `${index * 0.05}s`;
+        observer.observe(btn);
+      });
+    }, 100);
 
     return () => {
+      clearTimeout(timer);
+      const galleryElements = document.querySelectorAll('.gallery-item');
+      const filterBtns = document.querySelectorAll('.filter-btn');
       galleryElements.forEach(item => observer.unobserve(item));
       filterBtns.forEach(btn => observer.unobserve(btn));
     };
-  }, []);
+  }, [filteredItems]); // Tambahkan dependency
 
   useEffect(() => {
     if (activeCategory === 'Semua') {
@@ -133,16 +133,23 @@ const Gallery = () => {
   const handleCategoryChange = (category) => {
     setActiveCategory(category);
     
+    // Animasi fade out sebelum filter
     const items = document.querySelectorAll('.gallery-item');
-    items.forEach((item, index) => {
+    items.forEach((item) => {
       item.style.opacity = '0';
       item.style.transform = 'translateY(20px)';
-      
-      setTimeout(() => {
-        item.style.opacity = '1';
-        item.style.transform = 'translateY(0)';
-      }, index * 50 + 200);
     });
+    
+    // Delay untuk animasi fade in setelah filter
+    setTimeout(() => {
+      const newItems = document.querySelectorAll('.gallery-item');
+      newItems.forEach((item, index) => {
+        setTimeout(() => {
+          item.style.opacity = '1';
+          item.style.transform = 'translateY(0)';
+        }, index * 50);
+      });
+    }, 200);
   };
 
   return (
@@ -183,8 +190,13 @@ const Gallery = () => {
         <div className="gallery-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
           {filteredItems.map((item, index) => (
             <div
-              key={`${item.category}-${index}`}
-              className="gallery-item group relative overflow-hidden rounded-2xl shadow-lg bg-white hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 opacity-0 translate-y-8"
+              key={`${item.category}-${item.title}-${index}`}
+              className="gallery-item group relative overflow-hidden rounded-2xl shadow-lg bg-white hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+              style={{ 
+                opacity: 1, 
+                transform: 'translateY(0)',
+                transition: 'all 0.5s ease'
+              }}
             >
               {/* Image Container */}
               <div className="aspect-square overflow-hidden">
@@ -192,6 +204,9 @@ const Gallery = () => {
                   src={item.image}
                   alt={item.title}
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                  onError={(e) => {
+                    e.target.src = 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400&h=400&fit=crop';
+                  }}
                 />
               </div>
               
@@ -243,6 +258,13 @@ const Gallery = () => {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .gallery-item.animate-in {
+          opacity: 1 !important;
+          transform: translateY(0) !important;
+        }
+      `}</style>
     </section>
   );
 };
