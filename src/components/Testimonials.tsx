@@ -64,7 +64,7 @@ const Testimonials = () => {
       gsap.to('.testimonial-track', {
         xPercent: -50,
         ease: 'none',
-        duration: 30,
+        duration: 10,
         repeat: -1
       });
     }, testimonialsRef);
