@@ -3,7 +3,7 @@ import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import Stats from './components/Stats';
 import Quality from './components/Quality';
-import Products from './components/Products';
+import Gallery from './components/Gallery';
 import WhyChooseUs from './components/WhyChooseUs';
 import About from './components/About';
 import PartyOrders from './components/PartyOrders';
@@ -20,7 +20,7 @@ function App() {
       <Hero />
       <Stats />
       <Quality />
-      <Products />
+      <Gallery />
       <WhyChooseUs />
       <About />
       <PartyOrders />
