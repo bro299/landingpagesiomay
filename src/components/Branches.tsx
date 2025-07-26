@@ -9,25 +9,25 @@ const branches = [
   {
     name: 'Siomay & Batagor Bandung Barokah',
     address: ' Jl. Ambal-Ketawang, Keongan, Ukirsari, Kec. Grabag, Kabupaten Purworejo, Jawa Tengah ',
-    phone: '083177443185',
+    phone: '08886435570',
     hours: '10:00 - 21:00'
   },
   {
     name: 'Siomay & Batagor Bandung Barokah 2',
     address: 'Depan SMP N 38 PWR, Desa Bakurejo, Kec. Grabag, Kabupaten Purworejo, Jawa Tengah',
-    phone: '083177443185',
+    phone: '08886435570',
     hours: '08:00 - 19:00'
   },
   {
     name: 'Siomay & Batagor Bandung Barokah 3',
     address: 'Teges Lor, Patutrejo, Kec. Grabag, Kabupaten Purworejo, Jawa Tengah',
-    phone: '083177443185',
+    phone: '08886435570',
     hours: '13:00 - 21:00'
   },
   {
-    name: 'Tahu Golek/Krispi & Tahu Gejrot Sunda',
-    address: 'Teges Lor, Patutrejo, Kec. Grabag, Kabupaten Purworejo, Jawa Tengah',
-    phone: '083177443185',
+    name: 'Siomay & Batagor Bandung Barokah 4',
+    address: 'Unnamed Road, Klodran, Sumberagung, Kec. Grabag, Kabupaten Purworejo, Jawa Tengah',
+    phone: '08886435570',
     hours: '13:00 - 21:00'
   }
 ];
