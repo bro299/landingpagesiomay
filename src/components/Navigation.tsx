@@ -15,7 +15,7 @@ const Navigation = () => {
 
   const menuItems = [
     { label: 'Beranda', href: '#' },
-    { label: 'Menu', href: '#menu' },
+    { label: 'Gallery', href: '#gallery' },
     { label: 'Tentang', href: '#about' },
     { label: 'Kontak', href: '#contact' }
   ];
