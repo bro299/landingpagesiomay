@@ -69,7 +69,7 @@ const About = () => {
 
           <div className="about-section">
             <MapPin className="w-12 h-12 text-amber-600 mb-4 mx-auto" />
-            <h3 className="text-2xl font-bold text-amber-800 mb-8 text-center">Lokasi</h3>
+            <h3 className="text-2xl font-bold text-amber-800 mb-8 text-center">Lokasi Produksi</h3>
             <div className="aspect-w-16 aspect-h-9">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.5897787636087!2d109.85000071476974!3d-7.811479394368391!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7ac500017f2ad3%3A0xf5b030ff29db6f2d!2sRUMAH+SUYATNO+SIOMAY!5e0!3m2!1sen!2sid!4v1647831234567!5m2!1sen!2sid"
