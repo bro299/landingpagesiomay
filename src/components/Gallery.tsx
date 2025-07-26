@@ -77,7 +77,7 @@ const galleryItems = [
   {
     category: 'Produk',
     title: 'Es Kopyor Segar',
-    image: 'https://i0.wp.com/www.topwisata.info/wp-content/uploads/2022/04/Es-Kopyor-1-1.jpg?resize=930%2C620&ssl=1?auto=format&fit=crop&w=500',
+    image: 'https://i0.wp.com/www.topwisata.info/wp-content/uploads/2022/04/Es-Kopyor-1-1.jpg?resize=930%2C620&ssl=1',
     description: 'Minuman segar es kopyor - Rp 3.000/gelas'
   }
 ];
@@ -87,7 +87,7 @@ const categories = ['Semua', 'Kegiatan', 'Acara', 'Sertifikat', 'Produk'];
 const Gallery = () => {
   const galleryRef = useRef(null);
   const [activeCategory, setActiveCategory] = useState('Semua');
-  const [filteredItems, setFilteredItems] = useState(galleryItems);
+  const [filteredItems, setFilteredItems] = useState(galleryData);
 
   useEffect(() => {
     const observerOptions = {
@@ -103,10 +103,10 @@ const Gallery = () => {
       });
     }, observerOptions);
 
-    const galleryItems = document.querySelectorAll('.gallery-item');
+    const galleryElements = document.querySelectorAll('.gallery-item');
     const filterBtns = document.querySelectorAll('.filter-btn');
     
-    galleryItems.forEach((item, index) => {
+    galleryElements.forEach((item, index) => {
       item.style.transitionDelay = `${index * 0.1}s`;
       observer.observe(item);
     });
@@ -117,23 +117,22 @@ const Gallery = () => {
     });
 
     return () => {
-      galleryItems.forEach(item => observer.unobserve(item));
+      galleryElements.forEach(item => observer.unobserve(item));
       filterBtns.forEach(btn => observer.unobserve(btn));
     };
   }, []);
 
   useEffect(() => {
     if (activeCategory === 'Semua') {
-      setFilteredItems(galleryItems);
+      setFilteredItems(galleryData);
     } else {
-      setFilteredItems(galleryItems.filter(item => item.category === activeCategory));
+      setFilteredItems(galleryData.filter(item => item.category === activeCategory));
     }
   }, [activeCategory]);
 
   const handleCategoryChange = (category) => {
     setActiveCategory(category);
     
-    // Simple fade transition
     const items = document.querySelectorAll('.gallery-item');
     items.forEach((item, index) => {
       item.style.opacity = '0';
@@ -148,22 +147,6 @@ const Gallery = () => {
 
   return (
     <section id="gallery" ref={galleryRef} className="py-24 bg-gradient-to-br from-amber-50 to-orange-50">
-      <style jsx>{`
-        .gallery-item, .filter-btn {
-          opacity: 0;
-          transform: translateY(30px);
-          transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .gallery-item.animate-in, .filter-btn.animate-in {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        .gallery-item {
-          transition: all 0.3s ease, opacity 0.6s ease, transform 0.6s ease;
-        }
-      `}</style>
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
@@ -201,7 +184,7 @@ const Gallery = () => {
           {filteredItems.map((item, index) => (
             <div
               key={`${item.category}-${index}`}
-              className="gallery-item group relative overflow-hidden rounded-2xl shadow-lg bg-white hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+              className="gallery-item group relative overflow-hidden rounded-2xl shadow-lg bg-white hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 opacity-0 translate-y-8"
             >
               {/* Image Container */}
               <div className="aspect-square overflow-hidden">
