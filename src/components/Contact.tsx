@@ -70,7 +70,7 @@ const Contact = () => {
             <div className="bg-white rounded-xl shadow-lg p-8">
               <h3 className="text-xl font-bold text-amber-800 mb-6">Kirim Pesan</h3>
               <a
-                href="https://wa.link/kw3w04"
+                href="https://walg.link/6884c6412f5fa"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center w-full justify-center bg-green-600 text-white py-3 px-8 rounded-lg hover:bg-green-700 transition-colors text-lg font-semibold mb-4"
