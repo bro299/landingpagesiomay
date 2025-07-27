@@ -10,6 +10,7 @@ import PartyOrders from './components/PartyOrders';
 import OrderProcess from './components/OrderProcess';
 import Testimonials from './components/Testimonials';
 import Branches from './components/Branches';
+import Jobs from './components/Jobs';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -27,6 +28,7 @@ function App() {
       <OrderProcess />
       <Testimonials />
       <Branches />
+      <Jobs />
       <Contact />
       <Footer />
     </div>
