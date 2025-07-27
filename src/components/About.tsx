@@ -46,7 +46,7 @@ const About = () => {
               </p>
             </div>
             <img
-              src="/images/sejarah.jpg"
+              src="https://bbcazzyabpozlzxjupld.supabase.co/storage/v1/object/public/siomay//suyatno.jpeg"
               alt="Sejarah"
               className="rounded-lg shadow-lg"
             />
