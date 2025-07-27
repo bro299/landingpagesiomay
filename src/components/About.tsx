@@ -66,7 +66,7 @@ const About = () => {
             <div className="relative order-2 md:order-1">
               <div className="bg-gradient-to-br from-amber-100 to-amber-200 p-4 rounded-2xl shadow-lg">
                 <img
-                  src="/images/pangkalan.jpg"
+                  src="https://bbcazzyabpozlzxjupld.supabase.co/storage/v1/object/public/siomay//pangkalan1.jpeg"
                   alt="Pangkalan Pertama"
                   className="w-full h-64 object-cover rounded-lg shadow-md"
                 />
