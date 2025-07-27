@@ -17,6 +17,7 @@ const Navigation = () => {
     { label: 'Beranda', href: '#' },
     { label: 'Gallery', href: '#gallery' },
     { label: 'Tentang', href: '#about' },
+    { label: 'Lowongan', href: '#jobs' },
     { label: 'Kontak', href: '#contact' }
   ];
 
@@ -75,4 +76,5 @@ const Navigation = () => {
     </nav>
   );
 };
+
 export default Navigation;
