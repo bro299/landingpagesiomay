@@ -86,7 +86,7 @@ const Branches = () => {
                 </div>
               </div>
 
-              <div className="mt-4 space-y-2">
+              <div className="mt-4">
                 <a
                   href={branch.gmapsLink}
                   target="_blank"
@@ -94,15 +94,6 @@ const Branches = () => {
                   className="inline-block w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors text-center"
                 >
                   Lihat di Google Maps
-                </a>
-                
-                <a
-                  href={`https://wa.me/${branch.phone}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors text-center"
-                >
-                  Hubungi via WhatsApp
                 </a>
               </div>
             </div>
