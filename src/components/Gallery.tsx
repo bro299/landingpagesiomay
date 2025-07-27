@@ -4,76 +4,59 @@ import React, { useState, useEffect, useRef } from 'react';
 const galleryData = [
   {
     category: 'Kegiatan',
-    title: 'Persiapan Siomay Pagi',
-    image: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=400&h=400&fit=crop',
-    description: 'Proses pembuatan siomay segar setiap pagi dengan bahan-bahan pilihan terbaik'
+    title: 'Cabang3',
+    image: 'https://bbcazzyabpozlzxjupld.supabase.co/storage/v1/object/public/siomay//cabang3.jpeg',
+    description: 'Melayani pelanggan dengan ramah dan profesional setiap hari'
   },
   {
     category: 'Kegiatan',
-    title: 'Memasak Kuah Kacang',
-    image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=400&fit=crop',
-    description: 'Pembuatan kuah kacang spesial dengan resep turun temurun keluarga'
-  },
-  {
-    category: 'Acara',
-    title: 'Festival Kuliner 2024',
-    image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400&h=400&fit=crop',
-    description: 'Partisipasi dalam festival kuliner daerah dengan antusiasme tinggi'
-  },
-  {
-    category: 'Acara',
-    title: 'Bazar Ramadan',
-    image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=400&fit=crop',
-    description: 'Stand siomay di bazar Ramadan dengan menu spesial berbuka puasa'
-  },
-  {
-    category: 'Sertifikat',
-    title: 'Sertifikat PIRT',
-    image: 'https://images.unsplash.com/photo-1589578527966-fdac0f44566c?w=400&h=400&fit=crop',
-    description: 'Sertifikat Pangan Industri Rumah Tangga untuk menjamin kualitas produk'
-  },
-  {
-    category: 'Sertifikat',
-    title: 'Pelatihan Food Safety',
-    image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=400&fit=crop',
-    description: 'Sertifikat keamanan pangan untuk meningkatkan standar higienitas'
-  },
-  {
-    category: 'Produk',
-    title: 'Siomay Ayam Spesial',
-    image: 'https://images.unsplash.com/photo-1563379091339-03246963d51a?w=400&h=400&fit=crop',
-    description: 'Siomay ayam dengan tekstur lembut dan rasa yang menggugah selera - Rp 15.000/porsi'
-  },
-  {
-    category: 'Produk',
-    title: 'Batagor Crispy',
-    image: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400&h=400&fit=crop',
-    description: 'Batagor goreng renyah dengan bumbu kacang yang khas - Rp 12.000/porsi'
-  },
-  {
-    category: 'Produk',
-    title: 'Es Kopyor Segar',
-    image: 'https://i0.wp.com/www.topwisata.info/wp-content/uploads/2022/04/Es-Kopyor-1-1.jpg?resize=930%2C620&ssl=1',
-    description: 'Minuman segar es kopyor - Rp 3.000/gelas'
-  },
-  {
-    category: 'Produk',
-    title: 'Tahu Isi Goreng',
-    image: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400&h=400&fit=crop',
-    description: 'Tahu isi dengan bumbu kacang yang gurih - Rp 8.000/porsi'
-  },
-  {
-    category: 'Kegiatan',
-    title: 'Pelayanan Pelanggan',
-    image: 'https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=400&h=400&fit=crop',
+    title: 'Cabang1',
+    image: 'https://bbcazzyabpozlzxjupld.supabase.co/storage/v1/object/public/siomay//cabang1.jpeg',
     description: 'Melayani pelanggan dengan ramah dan profesional setiap hari'
   },
   {
     category: 'Acara',
-    title: 'Car Free Day',
-    image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=400&fit=crop',
-    description: 'Ikut serta dalam acara Car Free Day dengan gerobak siomay keliling'
+    title: 'Pesanan1',
+    image: 'https://bbcazzyabpozlzxjupld.supabase.co/storage/v1/object/public/siomay//acara1.jpeg',
+    description: 'Persiapan pesanan pesta'
+  },
+  {
+    category: 'Acara',
+    title: 'Pesanan2',
+    image: 'https://bbcazzyabpozlzxjupld.supabase.co/storage/v1/object/public/siomay//acara2.jpeg',
+    description: 'Persiapan pesanan pesta'
+  },
+  {
+    category: 'Sertifikat',
+    title: 'Sertifikat Halal',
+    image: 'https://bbcazzyabpozlzxjupld.supabase.co/storage/v1/object/public/siomay//sertifikat.jpeg',
+    description: 'Sertifikat Halall'
+  },
+  {
+    category: 'Produk',
+    title: 'Siomay Barokah',
+    image: 'https://bbcazzyabpozlzxjupld.supabase.co/storage/v1/object/public/siomay//produk.jpeg',
+    description: 'Siomay ayam dengan tekstur lembut dan rasa yang menggugah selera'
+  },
+  {
+    category: 'Kegiatan',
+    title: 'Cabang2',
+    image: 'https://bbcazzyabpozlzxjupld.supabase.co/storage/v1/object/public/siomay//cabang2.jpeg',
+    description: 'Melayani pelanggan dengan ramah dan profesional setiap hari'
+  },
+  {
+    category: 'Kegiatan',
+    title: 'Cabang4',
+    image: 'https://bbcazzyabpozlzxjupld.supabase.co/storage/v1/object/public/siomay//cabang4.jpeg',
+    description: 'Melayani pelanggan dengan ramah dan profesional setiap hari'
+  },
+  {
+    category: 'Kegiatan',
+    title: 'Cabang5',
+    image: 'https://bbcazzyabpozlzxjupld.supabase.co/storage/v1/object/public/siomay//cabang5.jpeg',
+    description: 'Melayani pelanggan dengan ramah dan profesional setiap hari'
   }
+  
 ];
 
 const categories = ['Semua', 'Kegiatan', 'Acara', 'Sertifikat', 'Produk'];
