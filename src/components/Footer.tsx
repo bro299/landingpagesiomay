@@ -19,13 +19,13 @@ const Footer = () => {
                 +62 888-6435-570
               </a>
               <a
-                href="https://instagram.com/siomayenak"
+                href="https://www.instagram.com/siomaybarokahpurworejo"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center hover:text-amber-200 transition-colors"
               >
                 <Instagram className="w-5 h-5 mr-2" />
-                @siomaybarokah
+                @siomaybarokahpurworejo
               </a>
             </div>
           </div>
